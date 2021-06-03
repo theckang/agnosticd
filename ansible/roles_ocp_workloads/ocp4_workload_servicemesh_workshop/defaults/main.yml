@@ -14,7 +14,13 @@ silent: false
 ## Workshop Settings
 ocp4_workload_servicemesh_workshop_user_count: 1
 ocp4_workload_servicemesh_workshop_image_repo: quay.io/redhatgov/service-mesh-workshop-dashboard
-ocp4_workload_servicemesh_workshop_image_tag: "2.0"
+ocp4_workload_servicemesh_workshop_image_tag: "2.0-mini"
+
+## Mini Workshop Settings
+ocp4_workload_servicemesh_workshop_app_template: https://raw.githubusercontent.com/RedHatGov/service-mesh-workshop-code/workshop-stable/config/app/app-ui-fromsource.yaml
+ocp4_workload_servicemesh_workshop_boards_template: https://raw.githubusercontent.com/RedHatGov/service-mesh-workshop-code/workshop-stable/config/app/boards-fromsource.yaml
+ocp4_workload_servicemesh_workshop_context_scraper_template: https://raw.githubusercontent.com/RedHatGov/service-mesh-workshop-code/workshop-stable/config/app/context-scraper-fromsource.yaml
+ocp4_workload_servicemesh_workshop_userprofile_build_template: https://raw.githubusercontent.com/RedHatGov/service-mesh-workshop-code/workshop-stable/config/app/userprofile-build.yaml
 
 ## Operator Settings
 ocp4_workload_servicemesh_workshop_elasticsearch_channel: "4.6"
