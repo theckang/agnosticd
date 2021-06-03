@@ -274,18 +274,16 @@
             -p GIT_URI=https://github.com/RedHatGov/service-mesh-workshop-code.git
   when: context_scraper_deployment.resources | length | int < 1
 
-- name: Create gateway configuration and routing rules
+- name: Install gateway config in {{ t_user_project }}
   k8s:
     state: present
-    definition: "{{ lookup('template', './templates/gateway.j2' ) | from_yaml }}"
-  vars:
-    namespace: "{{ t_user_project }}"
+    definition: "{{ lookup('template', './templates/gateway.j2' ) }}"
 
 - name: Check if build was created already
   k8s_info:
     api_version: build.openshift.io/v1
     kind: BuildConfig
-    name: userprofile
+    name: userprofile-1.0
     namespace: "{{ t_user_project }}"
   register: userprofile_build
 
@@ -328,7 +326,7 @@
   when: userprofile_deployment.resources | length | int < 1
   k8s:
     state: present
-    definition: "{{ lookup('template', './templates/userprofile.j2' ) | from_yaml }}"
+    definition: "{{ lookup('template', './templates/userprofile.j2') }}"
   vars:
     userprofile_image_id: "{{ r_image_stream.resources[0].status.dockerImageRepository }}"
 

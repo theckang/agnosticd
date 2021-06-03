@@ -2,7 +2,7 @@ apiVersion: networking.istio.io/v1alpha3
 kind: Gateway
 metadata:
   name: ingressgateway
-  namespace: {{ namespace }}
+  namespace: "{{ t_user_project }}"
 spec:
   selector:
     istio: ingressgateway
@@ -18,7 +18,7 @@ apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
   name: ingressgateway
-  namespace: {{ namespace }}
+  namespace: "{{ t_user_project }}"
 spec:
   hosts:
   - '*'
