@@ -14,7 +14,7 @@ silent: false
 ## Workshop Settings
 ocp4_workload_servicemesh_workshop_user_count: 1
 ocp4_workload_servicemesh_workshop_image_repo: quay.io/redhatgov/service-mesh-workshop-dashboard
-ocp4_workload_servicemesh_workshop_image_tag: "2.0-mini"
+ocp4_workload_servicemesh_workshop_image_tag: "2.1-mini"
 
 ## Mini Workshop Settings
 ocp4_workload_servicemesh_workshop_app_template: https://raw.githubusercontent.com/RedHatGov/service-mesh-workshop-code/workshop-stable/config/app/app-ui-fromsource.yaml
